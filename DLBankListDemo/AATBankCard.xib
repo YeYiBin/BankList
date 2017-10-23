@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AATBankCard" customModule="swiftProj" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AATBankCard" customModule="swiftProj" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="355" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="store_wallet_bank_card" translatesAutoresizingMaskIntoConstraints="NO" id="GDg-vf-5RH">
+                    <rect key="frame" x="0.0" y="0.0" width="355" height="120"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="招商银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJE-7D-Ajc">
+                    <rect key="frame" x="30" y="15" width="295" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="L9M-st-nJO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="储蓄卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMx-a5-2d7">
+                    <rect key="frame" x="32" y="35" width="118" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="HAr-tK-sGA"/>
+                        <constraint firstAttribute="width" constant="118" id="aXY-yh-gam"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="**** ***** **** 9890" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTr-Or-kuk">
+                    <rect key="frame" x="30" y="85" width="295" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="kzl-KY-sz0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="GujaratiSangamMN" family="Gujarati Sangam MN" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnc-66-ukd">
+                    <rect key="frame" x="0.0" y="0.0" width="355" height="120"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="rTr-Or-kuk" secondAttribute="trailing" constant="30" id="0Uv-pO-PfD"/>
+                <constraint firstItem="WMx-a5-2d7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="32" id="0zE-da-VcB"/>
+                <constraint firstAttribute="trailing" secondItem="YJE-7D-Ajc" secondAttribute="trailing" constant="30" id="3xY-lv-kkk"/>
+                <constraint firstItem="rTr-Or-kuk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="5BX-dZ-uXe"/>
+                <constraint firstItem="YJE-7D-Ajc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="5DM-Pn-wv8"/>
+                <constraint firstItem="WMx-a5-2d7" firstAttribute="top" secondItem="YJE-7D-Ajc" secondAttribute="bottom" id="8PP-ke-NUk"/>
+                <constraint firstAttribute="bottom" secondItem="rTr-Or-kuk" secondAttribute="bottom" constant="15" id="EQA-LC-Ywo"/>
+                <constraint firstItem="GDg-vf-5RH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Fse-c9-bhq"/>
+                <constraint firstAttribute="bottom" secondItem="GDg-vf-5RH" secondAttribute="bottom" id="Ugc-2M-qSF"/>
+                <constraint firstItem="Jnc-66-ukd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ag9-sV-X57"/>
+                <constraint firstItem="GDg-vf-5RH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eAe-m0-EFK"/>
+                <constraint firstItem="YJE-7D-Ajc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="pGW-Ug-omZ"/>
+                <constraint firstAttribute="bottom" secondItem="Jnc-66-ukd" secondAttribute="bottom" id="qZZ-P8-n6k"/>
+                <constraint firstAttribute="trailing" secondItem="Jnc-66-ukd" secondAttribute="trailing" id="uKq-us-zjD"/>
+                <constraint firstAttribute="trailing" secondItem="GDg-vf-5RH" secondAttribute="trailing" id="uOl-CN-bpO"/>
+                <constraint firstItem="Jnc-66-ukd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="vzK-FA-mKD"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="ClickBtn" destination="Jnc-66-ukd" id="oJK-Qy-D1a"/>
+                <outlet property="bankNameLable" destination="YJE-7D-Ajc" id="fD6-cj-fFY"/>
+                <outlet property="bankNumberLable" destination="rTr-Or-kuk" id="R6z-2k-cSa"/>
+                <outlet property="bankTypeLable" destination="WMx-a5-2d7" id="LQj-Lg-KU3"/>
+            </connections>
+            <point key="canvasLocation" x="-70.5" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="store_wallet_bank_card" width="535" height="198"/>
+    </resources>
+</document>

@@ -12,6 +12,10 @@
 		BB160A881F9DE19100E07C41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB160A861F9DE19100E07C41 /* Main.storyboard */; };
 		BB160A8A1F9DE19100E07C41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB160A891F9DE19100E07C41 /* Assets.xcassets */; };
 		BB160A8D1F9DE19100E07C41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB160A8B1F9DE19100E07C41 /* LaunchScreen.storyboard */; };
+		BB3B66C31F9E05AC00D733EB /* AATBankCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B66C01F9E05AB00D733EB /* AATBankCard.swift */; };
+		BB3B66C41F9E05AC00D733EB /* AATBankCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB3B66C11F9E05AC00D733EB /* AATBankCard.xib */; };
+		BB3B66C51F9E05AC00D733EB /* AATBanksCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B66C21F9E05AC00D733EB /* AATBanksCardView.swift */; };
+		BB3B66C71F9E060F00D733EB /* AATBankCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3B66C61F9E060F00D733EB /* AATBankCardModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		BB160A891F9DE19100E07C41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB160A8C1F9DE19100E07C41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB160A8E1F9DE19100E07C41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB3B66C01F9E05AB00D733EB /* AATBankCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATBankCard.swift; sourceTree = "<group>"; };
+		BB3B66C11F9E05AC00D733EB /* AATBankCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AATBankCard.xib; sourceTree = "<group>"; };
+		BB3B66C21F9E05AC00D733EB /* AATBanksCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATBanksCardView.swift; sourceTree = "<group>"; };
+		BB3B66C61F9E060F00D733EB /* AATBankCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AATBankCardModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				BB160A821F9DE19100E07C41 /* AppDelegate.swift */,
 				BB160A841F9DE19100E07C41 /* ViewController.swift */,
 				BB160A861F9DE19100E07C41 /* Main.storyboard */,
+				BB3B66C01F9E05AB00D733EB /* AATBankCard.swift */,
+				BB3B66C11F9E05AC00D733EB /* AATBankCard.xib */,
+				BB3B66C21F9E05AC00D733EB /* AATBanksCardView.swift */,
+				BB3B66C61F9E060F00D733EB /* AATBankCardModel.swift */,
 				BB160A891F9DE19100E07C41 /* Assets.xcassets */,
 				BB160A8B1F9DE19100E07C41 /* LaunchScreen.storyboard */,
 				BB160A8E1F9DE19100E07C41 /* Info.plist */,
@@ -123,6 +135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3B66C41F9E05AC00D733EB /* AATBankCard.xib in Resources */,
 				BB160A8D1F9DE19100E07C41 /* LaunchScreen.storyboard in Resources */,
 				BB160A8A1F9DE19100E07C41 /* Assets.xcassets in Resources */,
 				BB160A881F9DE19100E07C41 /* Main.storyboard in Resources */,
@@ -136,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3B66C71F9E060F00D733EB /* AATBankCardModel.swift in Sources */,
 				BB160A851F9DE19100E07C41 /* ViewController.swift in Sources */,
 				BB160A831F9DE19100E07C41 /* AppDelegate.swift in Sources */,
+				BB3B66C31F9E05AC00D733EB /* AATBankCard.swift in Sources */,
+				BB3B66C51F9E05AC00D733EB /* AATBanksCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
