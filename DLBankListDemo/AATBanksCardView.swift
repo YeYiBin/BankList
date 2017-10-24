@@ -18,6 +18,11 @@ open class AATBanksCardView: UIView {
     var selfWidth:Float = 0.00;
     var selfHeight:Float = 0.00;
     
+    let animationTime:CGFloat = 0.5
+    var buttonCount:Int = 0
+    var arrHeight:NSMutableArray = NSMutableArray()
+    var isSelectedButton:Bool = false   // is the button selected or not 选中状态下 不允许 scrollView 滚动
+    
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,6 +37,32 @@ open class AATBanksCardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func stringToFloat(str:String) ->(CGFloat){
+        let string = str  // 注意这里为什么要用 let 来修饰 str
+        var cgFloat:CGFloat = 0
+        
+        if let doubleValue = Double(string)
+        {
+            cgFloat = CGFloat (doubleValue)
+        }
+        
+        return cgFloat
+    }
+    
+    private func stringToInt(str:String) -> (Int){
+        let string = str
+        var int:Int?
+        if let doubleValue = Double(string)
+        {
+            int = Int(doubleValue)
+        }
+        
+        if  int == nil {
+            return 0
+        }
+        return int!
+    }
+    
     // 重新根据数据刷新列表
     public func reloadData(){
         
@@ -39,6 +70,8 @@ open class AATBanksCardView: UIView {
         guard count!>0 else {
             return
         }
+        
+        buttonCount = count!
         
         var contentHeight:CGFloat = 0.00;
         
@@ -56,6 +89,7 @@ open class AATBanksCardView: UIView {
         
         for index in 0 ..< count! {
             
+            
             let card:AATBankCard = dataSource?.banksCardView(view: self, viewForRowAtIndex: index) as! AATBankCard;
             card.tag =  1000+index;
             card.ClickBtn.tag = 2000+index
@@ -66,6 +100,10 @@ open class AATBanksCardView: UIView {
             let headHei:CGFloat = CGFloat((self.dataSource?.banksCardView(view: self, heightForHeadViewAtIndex: index))!);
             
             let ide = CGFloat (index)
+            
+            // add the row string
+            let rowHeiString = String.init(format:"%.2f",rowHei)
+            arrHeight.add(rowHeiString)
             
             card.frame = CGRect(x: CGFloat(0.00), y: headHei*ide, width: CGFloat(selfWidth), height: rowHei)
             scrollView?.addSubview(card)
@@ -96,7 +134,9 @@ open class AATBanksCardView: UIView {
             return
         }
         
-        scrollView = UIScrollView.init(frame: self.bounds)
+        buttonCount = count!  //
+        
+        scrollView = UIScrollView(frame: self.bounds)
         scrollView?.backgroundColor = UIColor.clear;
         scrollView?.contentSize = CGSize(width: Double(selfWidth), height: Double(50*count!))
         self.addSubview(scrollView!)
@@ -114,7 +154,49 @@ open class AATBanksCardView: UIView {
     
     @objc func touchCard(_ button:UIButton) {
         let btn:UIButton = button;
+        
         delegate?.banksCardView(view: self, didSelectViewAtIndex: btn.tag-2000)
+        scrollView?.contentOffset = CGPoint(x: 0, y: 0)
+        isSelectedButton = !isSelectedButton
+        
+//      card.frame = CGRect(x: CGFloat(0.00), y: headHei*ide, width: CGFloat(selfWidth), height: rowHei)
+        // 是否选中 某个选项
+        if isSelectedButton == true {
+            scrollView?.isScrollEnabled = false
+            //
+            for index in 0..<buttonCount{
+                let cardView:AATBankCard = self.viewWithTag(index+1000) as! AATBankCard
+                
+                let animationRowHeight = stringToFloat(str: arrHeight[index] as! String)
+                UIView.animate(withDuration: 0.5, animations: {
+                    
+                    cardView.frame = CGRect(x: CGFloat(0.00), y: 0, width: CGFloat(self.selfWidth), height: animationRowHeight)
+                    
+                    if (cardView.tag+1000) > btn.tag{
+                        cardView.frame = CGRect(x: CGFloat(0.00), y: CGFloat(self.selfHeight - 20), width: CGFloat(self.selfWidth), height: animationRowHeight)
+                    }else{
+                        cardView.frame = CGRect(x: CGFloat(0.00), y: 0.0, width: CGFloat(self.selfWidth), height: animationRowHeight)
+                    }
+                    
+                })
+            }
+            
+        }else{
+            scrollView?.isScrollEnabled = true
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                for index in 0..<self.buttonCount{
+                    let cardView:AATBankCard = self.viewWithTag(index+1000) as! AATBankCard
+                    let rowHei:CGFloat = CGFloat((self.dataSource?.banksCardView(view: self, heightForRowAtIndex: index))!)
+                    let headHei:CGFloat = CGFloat((self.dataSource?.banksCardView(view: self, heightForHeadViewAtIndex: index))!);
+                    let ide = CGFloat (index)
+                    cardView.frame = CGRect(x: CGFloat(0.00), y: headHei*ide, width: CGFloat(self.selfWidth), height: rowHei)
+                }
+            })
+           
+        }
+        
+        
     }
 }
 
