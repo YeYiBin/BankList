@@ -11,6 +11,7 @@ import UIKit
 
 open class AATBanksCardView: UIView {
     
+    // 注意这是 一个 weak 的修饰符 不然默认 是strong的类型
     weak var dataSource:AATBanksCardViewDataSource?
     weak var delegate:AATBanksCardViewDelegate?
     
